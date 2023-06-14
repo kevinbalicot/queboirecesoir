@@ -30,12 +30,12 @@ final class MessengerQueryBus implements QueryBusInterface
      */
     public function ask(QueryInterface $query): mixed
     {
-        //$this->logger->start($query->getMessagerName(), $query);
+        // $this->logger->start($query->getMessagerName(), $query);
 
         try {
             $response = $this->handle($query);
 
-            //$this->logger->success($query->getMessagerName(), $response, true);
+            // $this->logger->success($query->getMessagerName(), $response, true);
 
             return $response;
         } catch (HandlerFailedException $exception) {
@@ -46,7 +46,7 @@ final class MessengerQueryBus implements QueryBusInterface
                 throw $firstException;
             }
 
-            //$this->logger->error($query->getMessagerName(), $handlerException->getMessage());
+            // $this->logger->error($query->getMessagerName(), $handlerException->getMessage());
 
             throw $handlerException;
         }

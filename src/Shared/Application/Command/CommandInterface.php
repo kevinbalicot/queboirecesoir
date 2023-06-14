@@ -6,5 +6,5 @@ namespace App\Shared\Application\Command;
 
 interface CommandInterface
 {
-    //public function getMessagerName(): string;
+    // public function getMessagerName(): string;
 }

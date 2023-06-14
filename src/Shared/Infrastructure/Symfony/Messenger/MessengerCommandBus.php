@@ -29,12 +29,12 @@ final class MessengerCommandBus implements CommandBusInterface
      */
     public function dispatch(CommandInterface $command): mixed
     {
-        //$this->logger->start($command->getMessagerName(), $command);
+        // $this->logger->start($command->getMessagerName(), $command);
 
         try {
             $response = $this->handle($command);
 
-            //$this->logger->success($command->getMessagerName(), $response, true);
+            // $this->logger->success($command->getMessagerName(), $response, true);
 
             return $response;
         } catch (HandlerFailedException $exception) {
@@ -45,7 +45,7 @@ final class MessengerCommandBus implements CommandBusInterface
                 throw $firstException;
             }
 
-            //$this->logger->error($command->getMessagerName(), $handlerException->getMessage());
+            // $this->logger->error($command->getMessagerName(), $handlerException->getMessage());
 
             throw $handlerException;
         }

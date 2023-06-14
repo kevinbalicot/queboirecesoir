@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DrinkPrediction\Domain\Enum;
 
 enum WayOfThinkingEnum
@@ -27,7 +29,7 @@ enum WayOfThinkingEnum
 
     public static function getWayOfThinking(string $wayOfThinking): self
     {
-        return match($wayOfThinking) {
+        return match ($wayOfThinking) {
             'rationalism' => self::Rationalism,
             'empiricism' => self::Empiricism,
             'positivism' => self::Positivism,

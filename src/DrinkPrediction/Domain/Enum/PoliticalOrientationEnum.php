@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DrinkPrediction\Domain\Enum;
 
 enum PoliticalOrientationEnum
@@ -25,7 +27,6 @@ enum PoliticalOrientationEnum
     case Transhumanism;
     case Regionalism;
     case Utopianism;
-
 
     public static function getPoliticalOrientation(string $politicalOrientation): self
     {

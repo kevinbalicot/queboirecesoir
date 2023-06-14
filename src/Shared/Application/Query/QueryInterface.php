@@ -6,5 +6,5 @@ namespace App\Shared\Application\Query;
 
 interface QueryInterface
 {
-    //public function getMessagerName(): string;
+    // public function getMessagerName(): string;
 }
