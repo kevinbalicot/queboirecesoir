@@ -38,9 +38,9 @@ class PredictDrinkAction extends AbstractController
             size: (int) ($data['size'] ?? 170),
             hairinessColor: HairinessColorEnum::getHairinessColor($data['hairinessColor'] ?? 'unknown'),
             corpulence: CorpulenceEnum::getCorpulence($data['corpulence'] ?? 'unknown'),
-            character: array_map(fn (string $character) => CharacterEnum::getCharacter($character), $data['character'] ?? []),
-            politicalOrientation: array_map(fn (string $orientation) => PoliticalOrientationEnum::getPoliticalOrientation($orientation), $data['politicalOrientation'] ?? []),
-            wayOfThinking: array_map(fn (string $way) => WayOfThinkingEnum::getWayOfThinking($way), $data['wayOfThinking'] ?? []),
+            characters: array_map(fn (string $character) => CharacterEnum::getCharacter($character), $data['character'] ?? []),
+            politicalOrientations: array_map(fn (string $orientation) => PoliticalOrientationEnum::getPoliticalOrientation($orientation), $data['politicalOrientation'] ?? []),
+            wayOfThinkings: array_map(fn (string $way) => WayOfThinkingEnum::getWayOfThinking($way), $data['wayOfThinking'] ?? []),
         );
 
         /** @var DrinkPredictionInterface $prediction */

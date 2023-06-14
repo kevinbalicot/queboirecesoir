@@ -15,9 +15,9 @@ final class PredictDrinkCommand implements CommandInterface
         public readonly int $size,
         public readonly HairinessColorEnum $hairinessColor,
         public readonly CorpulenceEnum $corpulence,
-        public readonly array $character,
-        public readonly array $politicalOrientation,
-        public readonly array $wayOfThinking,
+        public readonly array $characters,
+        public readonly array $politicalOrientations,
+        public readonly array $wayOfThinkings,
     ) {
     }
 }
