@@ -107,14 +107,19 @@ class PredictionResult extends CustomElement {
         @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css');
       </style>
 
-      <h3 class="mb-4">Tu boirais pas une <span data-ref="drinkPrediction"></span> par hasard ?</h3>
+      <h3 class="mb-4 text-center">
+        Tu boirais pas une <span data-ref="drinkPrediction"></span> par hasard ?
+      </h3>
       <p class="alert alert-info"><span data-ref="drinkPredictionDescription"></span> <strong>Allez santé ! 🍻</strong></p>
       <div>
           <div class="col-md-6 offset-md-3">
               <canvas data-ref="predictionResult"></canvas>
           </div>
       </div>
-      <button data-ref="cancelButton" type="button" class="btn btn-sm btn-secondary mt-3">Hum ... Je ne suis pas convaincu</button>
+
+      <footer class="text-center">
+        <button data-ref="cancelButton" type="button" class="btn btn-sm btn-secondary mt-3">Hum ... Je ne suis pas convaincu</button>
+      </footer>
     `
   }
 }
