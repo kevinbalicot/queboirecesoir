@@ -6,4 +6,5 @@ use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 return static function (RoutingConfigurator $routingConfigurator): void {
     $routingConfigurator->import('../../src/DrinkPrediction/Infrastructure/Symfony/Controller', 'attribute');
+    $routingConfigurator->import('../../src/Application/Infrastructure/Symfony/Controller', 'attribute');
 };

@@ -6,19 +6,26 @@ namespace App\DrinkPrediction\Application\Operation\Command;
 
 use App\DrinkPrediction\Domain\Factory\DrinkPredictionFactory;
 use App\DrinkPrediction\Domain\Model\DrinkPredictionInterface;
+use App\DrinkPrediction\Domain\Predictor\PredicatorInterface;
 use App\Shared\Application\Command\CommandHandlerInterface;
 
-final class PredictDrinkCommandHandler implements CommandHandlerInterface
+final readonly class PredictDrinkCommandHandler implements CommandHandlerInterface
 {
-    public function __invoke(PredictDrinkCommand $drinkCommand): DrinkPredictionInterface
-    {
-        $drinkPrediction = DrinkPredictionFactory::createNew();
-
-        return $this->predictWithIf($drinkPrediction);
+    public function __construct(
+        private PredicatorInterface $predicator
+    ) {
     }
 
-    private function predictWithIf(DrinkPredictionInterface $prediction): DrinkPredictionInterface
+    public function __invoke(PredictDrinkCommand $drinkCommand): DrinkPredictionInterface
     {
-        return $prediction;
+        return $this->predicator->predictDrink(
+            age: $drinkCommand->age,
+            hairinessColor: $drinkCommand->hairinessColor,
+            size: $drinkCommand->size,
+            corpulence: $drinkCommand->corpulence,
+            characters: $drinkCommand->characters,
+            politicalOrientations: $drinkCommand->politicalOrientations,
+            wayOfThinkings: $drinkCommand->wayOfThinkings
+        );
     }
 }

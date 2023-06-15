@@ -4,20 +4,22 @@ declare(strict_types=1);
 
 namespace App\DrinkPrediction\Application\Operation\Command;
 
+use App\DrinkPrediction\Domain\Enum\AgeRangeEnum;
 use App\DrinkPrediction\Domain\Enum\CorpulenceEnum;
 use App\DrinkPrediction\Domain\Enum\HairinessColorEnum;
+use App\DrinkPrediction\Domain\Enum\SizeEnum;
 use App\Shared\Application\Command\CommandInterface;
 
-final class PredictDrinkCommand implements CommandInterface
+final readonly class PredictDrinkCommand implements CommandInterface
 {
     public function __construct(
-        public readonly \DateTime $birthDay,
-        public readonly int $size,
-        public readonly HairinessColorEnum $hairinessColor,
-        public readonly CorpulenceEnum $corpulence,
-        public readonly array $characters,
-        public readonly array $politicalOrientations,
-        public readonly array $wayOfThinkings,
+        public AgeRangeEnum $age,
+        public SizeEnum $size,
+        public HairinessColorEnum $hairinessColor,
+        public CorpulenceEnum $corpulence,
+        public array $characters,
+        public array $politicalOrientations,
+        public array $wayOfThinkings,
     ) {
     }
 }

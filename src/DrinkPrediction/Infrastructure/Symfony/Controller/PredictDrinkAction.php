@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace App\DrinkPrediction\Infrastructure\Symfony\Controller;
 
 use App\DrinkPrediction\Application\Operation\Command\PredictDrinkCommand;
+use App\DrinkPrediction\Domain\Enum\AgeRangeEnum;
 use App\DrinkPrediction\Domain\Enum\CharacterEnum;
 use App\DrinkPrediction\Domain\Enum\CorpulenceEnum;
 use App\DrinkPrediction\Domain\Enum\HairinessColorEnum;
 use App\DrinkPrediction\Domain\Enum\PoliticalOrientationEnum;
+use App\DrinkPrediction\Domain\Enum\SizeEnum;
 use App\DrinkPrediction\Domain\Enum\WayOfThinkingEnum;
 use App\DrinkPrediction\Domain\Model\DrinkPredictionInterface;
 use App\Shared\Application\Command\CommandBusInterface;
@@ -34,8 +36,8 @@ class PredictDrinkAction extends AbstractController
         }
 
         $command = new PredictDrinkCommand(
-            birthDay: $data['birthDay'] ?? new \DateTime(),
-            size: (int) ($data['size'] ?? 170),
+            age: AgeRangeEnum::getAgeRange($data['birthday'] ?? new \DateTime()),
+            size: SizeEnum::getSize((int) ($data['size'] ?? 170)),
             hairinessColor: HairinessColorEnum::getHairinessColor($data['hairinessColor'] ?? 'unknown'),
             corpulence: CorpulenceEnum::getCorpulence($data['corpulence'] ?? 'unknown'),
             characters: array_map(fn (string $character) => CharacterEnum::getCharacter($character), $data['character'] ?? []),
