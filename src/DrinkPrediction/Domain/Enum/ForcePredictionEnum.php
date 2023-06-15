@@ -12,12 +12,10 @@ enum ForcePredictionEnum
 
     public static function getForce(self $forcePrediction): int
     {
-        match ($forcePrediction) {
-            self::Little => $force = 1,
-            self::Medium => $force = 3,
-            self::Strong => $force = 5,
+        return match ($forcePrediction) {
+            self::Little => 1,
+            self::Medium => 3,
+            self::Strong => 5,
         };
-
-        return $force;
     }
 }

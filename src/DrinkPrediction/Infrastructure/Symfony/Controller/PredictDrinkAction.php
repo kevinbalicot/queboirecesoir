@@ -30,7 +30,7 @@ class PredictDrinkAction extends AbstractController
     public function __invoke(Request $request): Response
     {
         try {
-            $data = json_decode($request->getContent()) ?? [];
+            $data = json_decode($request->getContent(), associative: true) ?? [];
         } catch (\Exception $exception) {
             return $this->json(['message' => $exception->getMessage()], 400);
         }

@@ -1,0 +1,47 @@
+[
+  {
+    "key": "black",
+    "name": "Noir",
+    "description": ""
+  },
+  {
+    "key": "brown",
+    "name": "Brun",
+    "description": ""
+  },
+  {
+    "key": "blonde",
+    "name": "Blond",
+    "description": ""
+  },
+  {
+    "key": "ginger",
+    "name": "Roux",
+    "description": ""
+  },
+  {
+    "key": "blue",
+    "name": "Bleu",
+    "description": ""
+  },
+  {
+    "key": "green",
+    "name": "Vert",
+    "description": ""
+  },
+  {
+    "key": "orange",
+    "name": "Orange",
+    "description": ""
+  },
+  {
+    "key": "pink",
+    "name": "Rose",
+    "description": ""
+  },
+  {
+    "key": "rainbow",
+    "name": "Arc en ciel",
+    "description": ""
+  }
+]

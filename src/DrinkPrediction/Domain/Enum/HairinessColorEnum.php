@@ -24,12 +24,12 @@ enum HairinessColorEnum
             'black' => self::Black,
             'brown' => self::Brown,
             'blonde' => self::Blonde,
-            'roux' => self::Roux,
+            'ginger' => self::Roux,
             'blue' => self::Blue,
             'green' => self::Green,
             'orange' => self::Orange,
             'pink' => self::Pink,
-            'Rainbow' => self::Rainbow,
+            'rainbow' => self::Rainbow,
             default => self::Other,
         };
     }
