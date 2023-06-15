@@ -36,12 +36,12 @@ class PredictDrinkAction extends AbstractController
         }
 
         $command = new PredictDrinkCommand(
-            age: AgeRangeEnum::getAgeRange($data['birthday'] ?? new \DateTime()),
+            age: AgeRangeEnum::getAgeRange(new \DateTime($data['birthday'] ?? '')),
             size: SizeEnum::getSize((int) ($data['size'] ?? 170)),
             hairinessColor: HairinessColorEnum::getHairinessColor($data['hairinessColor'] ?? 'unknown'),
             corpulence: CorpulenceEnum::getCorpulence($data['corpulence'] ?? 'unknown'),
-            characters: array_map(fn (string $character) => CharacterEnum::getCharacter($character), $data['character'] ?? []),
-            politicalOrientations: array_map(fn (string $orientation) => PoliticalOrientationEnum::getPoliticalOrientation($orientation), $data['politicalOrientation'] ?? []),
+            characters: array_map(fn (string $character) => CharacterEnum::getCharacter($character), $data['characters'] ?? []),
+            politicalOrientations: array_map(fn (string $orientation) => PoliticalOrientationEnum::getPoliticalOrientation($orientation), $data['politicalOrientations'] ?? []),
             wayOfThinkings: array_map(fn (string $way) => WayOfThinkingEnum::getWayOfThinking($way), $data['wayOfThinking'] ?? []),
         );
 

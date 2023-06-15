@@ -22,27 +22,15 @@ class PredictionResult extends CustomElement {
       'Saison': 'rgba(191, 73, 4, .3)',
       'Weizenbier': 'rgba(242, 183, 5, .3)',
     }
+
+    this.beerStyles = []
   }
 
   get prediction() {
     return JSON.parse(this.getAttribute('prediction'))
   }
 
-  connectedCallback() {
-    const data = this.prediction
-    let max = 0
-    let drinkPrediction
-
-    for (let style in data) {
-      if (data[style] > max) {
-        drinkPrediction = style
-        max = data[style]
-      }
-    }
-
-    this.$refs.drinkPrediction.innerText = drinkPrediction
-    this.$refs.drinkPrediction.style = `color: ${this.colors[drinkPrediction]}`
-
+  displayChart(data, drinkPrediction) {
     const dataSet = {
       labels: Object.keys(data),
       datasets: [
@@ -61,10 +49,50 @@ class PredictionResult extends CustomElement {
         type: 'radar',
         data: dataSet,
         options: {
-          responsive: true,
+          responsive: false,
+          /*scale: {
+            ticks: {
+              beginAtZero: true,
+              max: 1,
+              min: 0,
+              stepSize: 0.1
+            }
+          }*/
         },
       }
     )
+  }
+
+  displayPrediction(drinkPrediction) {
+    this.$refs.drinkPrediction.innerText = drinkPrediction
+    this.$refs.drinkPrediction.style = `color: ${this.colors[drinkPrediction]}`
+
+    const beerStyle = this.beerStyles.find(({ key }) => key === drinkPrediction)
+    if (beerStyle) {
+      this.$refs.drinkPredictionDescription.innerText = beerStyle.description
+    }
+  }
+
+  connectedCallback() {
+    this.$refs.cancelButton.addEventListener('click', () => this.dispatchEvent(new CustomEvent('close')))
+    const data = this.prediction
+    let max = 0
+    let drinkPrediction
+
+    for (let style in data) {
+      if (data[style] > max) {
+        drinkPrediction = style
+        max = data[style]
+      }
+    }
+
+    fetch('/assets/data/beer-styles.json')
+      .then(response => response.json())
+      .then(beerStyles => {
+        this.beerStyles = beerStyles
+        this.displayPrediction(drinkPrediction)
+        this.displayChart(data, drinkPrediction)
+      })
   }
 
   disconnectedCallback() {
@@ -79,9 +107,11 @@ class PredictionResult extends CustomElement {
         @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css');
       </style>
 
-      <div class="text-center">
-        <h3 class="mb-4">Tu boirais pas une <span data-ref="drinkPrediction"></span> par hasard ? Allez santé !</h3>
+      <div class="d-flex flex-column align-items-center">
+        <h3 class="mb-4">Tu boirais pas une <span data-ref="drinkPrediction"></span> par hasard ?</h3>
+        <p class="alert alert-info"><span data-ref="drinkPredictionDescription"></span> <strong>Allez santé ! 🍻</strong></p>
         <canvas data-ref="predictionResult" width="800"></canvas>
+        <button data-ref="cancelButton" type="button" class="btn btn-sm btn-secondary mt-3">Hum ... Je ne suis pas convaincu</button>
       </div>
     `
   }

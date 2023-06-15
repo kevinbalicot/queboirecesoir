@@ -31,10 +31,14 @@ RUN docker-php-ext-install \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN ln -s $PHP_INI_DIR/php.ini-production $PHP_INI_DIR/php.ini
-COPY infrastructure/docker-full/php/conf.d/symfony.ini $PHP_INI_DIR/conf.d/symfony.ini
+COPY docker/php/conf.d/symfony.ini $PHP_INI_DIR/conf.d/symfony.ini
+
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-COPY infrastructure/docker-full/php/entrypoint.sh /usr/local/bin/docker-app-entrypoint
+COPY docker/php/docker-entrypoint.sh /usr/local/bin/docker-app-entrypoint
 RUN chmod +x /usr/local/bin/docker-app-entrypoint
+
+RUN apt-get update && apt-get install -y bash git wget
+RUN wget https://get.symfony.com/cli/installer -O - | bash && mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
 
 WORKDIR /var/www/html
 

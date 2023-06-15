@@ -1,0 +1,26 @@
+[
+  {
+    "key": "Pilsner",
+    "description": "Les pilsners sont des lagers claires et légères, originaires de la République tchèque. Elles se distinguent par leur arôme subtil de houblon, leur amertume modérée et leur finition nette et croustillante."
+  },
+  {
+    "key": "IPA",
+    "description": "L'IPA (India Pale Ale) est un style de bière qui se distingue par son amertume et ses arômes de houblon prononcés. Les IPA peuvent être plus légères et fruitées (IPA américaine) ou plus maltées et terreuses (IPA anglaise)."
+  },
+  {
+    "key": "Stout",
+    "description": "Les stouts sont des bières noires et épaisses, souvent associées à des saveurs de café, de chocolat et de torréfaction. Ils ont généralement une teneur en alcool plus élevée et une texture veloutée."
+  },
+  {
+    "key": "Weizenbier",
+    "description": "Ce style de bière allemande est brassé avec une grande proportion de malt de blé, ce qui lui confère un corps plein et une saveur de banane et de clou de girofle provenant de la levure utilisée."
+  },
+  {
+    "key": "Saison",
+    "description": "Originaire de la Belgique, la bière de saison est traditionnellement une bière fermière brassée pendant les mois d'hiver pour être consommée pendant l'été. Elle est souvent épicée, légèrement acide et rafraîchissante."
+  },
+  {
+    "key": "Belgian Strong Ale",
+    "description": "Ces bières belges fortes et complexes ont généralement une teneur en alcool élevée et des saveurs riches de fruits, d'épices et de levure belge distinctive."
+  }
+]

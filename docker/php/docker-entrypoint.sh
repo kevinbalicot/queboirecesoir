@@ -6,5 +6,7 @@ if [ "${1#-}" != "$1" ]; then
 	set -- php-fpm "$@"
 fi
 
+symfony server:start -d
+
 chown -R www-data var
 exec docker-php-entrypoint "$@"

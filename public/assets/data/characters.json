@@ -1,0 +1,82 @@
+[
+  {
+    "key": "kindness",
+    "name": "Gentillesse",
+    "description": ""
+  },
+  {
+    "key": "empathy",
+    "name": "Empathie",
+    "description": ""
+  },
+  {
+    "key": "patience",
+    "name": "Patience",
+    "description": ""
+  },
+  {
+    "key": "tolerance",
+    "name": "Tolérance",
+    "description": ""
+  },
+  {
+    "key": "determination",
+    "name": "Détermination",
+    "description": ""
+  },
+  {
+    "key": "open-mindedness",
+    "name": "Ouvert d'esprit",
+    "description": ""
+  },
+  {
+    "key": "reliability",
+    "name": "Fiabilité",
+    "description": ""
+  },
+  {
+    "key": "respect",
+    "name": "Respect",
+    "description": ""
+  },
+  {
+    "key": "optimism",
+    "name": "Optimisme",
+    "description": ""
+  },
+  {
+    "key": "creativity",
+    "name": "Créatif",
+    "description": ""
+  },
+  {
+    "key": "wisdom",
+    "name": "Sagesse",
+    "description": ""
+  },
+  {
+    "key": "charisme",
+    "name": "Charismatique",
+    "description": ""
+  },
+  {
+    "key": "altruism",
+    "name": "Altruisme",
+    "description": ""
+  },
+  {
+    "key": "independence",
+    "name": "Indépendance",
+    "description": ""
+  },
+  {
+    "key": "eccentricity",
+    "name": "Excentricité",
+    "description": ""
+  },
+  {
+    "key": "intuition",
+    "name": "Intuition",
+    "description": ""
+  }
+]
