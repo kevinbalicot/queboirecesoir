@@ -20,6 +20,7 @@ class PredictionForm extends CustomElement {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
+        mode: 'cors',
       })
         .then(response => response.json())
         .then(data => this.drawChart(data))

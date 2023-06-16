@@ -111,7 +111,7 @@ class PredictionResult extends CustomElement {
         Tu boirais pas une <span data-ref="drinkPrediction"></span> par hasard ?
       </h3>
       <p class="alert alert-info"><span data-ref="drinkPredictionDescription"></span> <strong>Allez santé ! 🍻</strong></p>
-      <div>
+      <div class="row">
           <div class="col-md-6 offset-md-3">
               <canvas data-ref="predictionResult"></canvas>
           </div>

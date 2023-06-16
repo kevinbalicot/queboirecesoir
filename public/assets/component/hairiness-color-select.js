@@ -2,7 +2,7 @@ class HairinessColorSelect extends HTMLSelectElement {
   connectedCallback() {
     this.innerHTML = '<option></option>'
 
-    fetch('/assets/data/hairiness-colors.json')
+    fetch('/assets/data/hairiness-colors.json', { mode: 'cors' })
       .then(response => response.json())
       .then(data => {
         this.append(

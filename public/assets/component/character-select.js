@@ -1,6 +1,6 @@
 class CharacterSelect extends HTMLSelectElement {
   connectedCallback() {
-    fetch('/assets/data/characters.json')
+    fetch('/assets/data/characters.json', { mode: 'cors' })
       .then(response => response.json())
       .then(data => {
         this.append(
