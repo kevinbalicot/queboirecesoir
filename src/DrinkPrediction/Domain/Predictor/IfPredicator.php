@@ -178,6 +178,66 @@ class IfPredicator implements PredicatorInterface
             $prediction->predictDrink(BeerStyleEnum::Saison, ForcePredictionEnum::Medium);
         }
 
+        // extreme adventurer
+        if (
+            (HairinessColorEnum::Brown || HairinessColorEnum::Chestnut) &&
+            AgeRangeEnum::Young === $age &&
+            (SizeEnum::Medium === $size || SizeEnum::Tall === $size) &&
+            (in_array(CharacterEnum::Independence, $characters) || in_array(CharacterEnum::Determination, $characters))
+        ) {
+            $prediction->predictDrink(BeerStyleEnum::IPA, ForcePredictionEnum::Strong);
+        }
+
+        // contemplative music lover
+        if (
+            (HairinessColorEnum::Black || HairinessColorEnum::Brown || HairinessColorEnum::Blonde) &&
+            (AgeRangeEnum::Young === $age || AgeRangeEnum::MiddleAged) &&
+            (SizeEnum::Medium === $size || SizeEnum::Tall === $size) &&
+            (in_array(CharacterEnum::Empathy, $characters) || in_array(CharacterEnum::Creativity, $characters))
+        ) {
+            $prediction->predictDrink(BeerStyleEnum::Stout, ForcePredictionEnum::Strong);
+        }
+
+        // warm and laid back friend
+        if (
+            (HairinessColorEnum::Black || HairinessColorEnum::Brown || HairinessColorEnum::Blonde || HairinessColorEnum::Chestnut) &&
+            (AgeRangeEnum::Young === $age || AgeRangeEnum::MiddleAged) &&
+            (SizeEnum::Small === $size || SizeEnum::Medium === $size) &&
+            (in_array(CharacterEnum::Kindness, $characters) || in_array(CharacterEnum::Optimism, $characters))
+        ) {
+            $prediction->predictDrink(BeerStyleEnum::Pilsner, ForcePredictionEnum::Strong);
+        }
+
+        // eccentric epicurean
+        if (
+            (HairinessColorEnum::Black || HairinessColorEnum::Brown || HairinessColorEnum::Blonde || HairinessColorEnum::Chestnut) &&
+            (AgeRangeEnum::MiddleAged === $age || AgeRangeEnum::Old) &&
+            (SizeEnum::VeryTall === $size || SizeEnum::Small === $size || SizeEnum::Medium === $size) &&
+            (in_array(CharacterEnum::Eccentricity, $characters) || in_array(CharacterEnum::Tolerance, $characters))
+        ) {
+            $prediction->predictDrink(BeerStyleEnum::BelgianStrongAle, ForcePredictionEnum::Strong);
+        }
+
+        // passionate
+        if (
+            (HairinessColorEnum::Blue || HairinessColorEnum::Green || HairinessColorEnum::Orange || HairinessColorEnum::Pink || HairinessColorEnum::Rainbow) &&
+            (AgeRangeEnum::Young === $age || AgeRangeEnum::MiddleAged) &&
+            (SizeEnum::VeryTall === $size || SizeEnum::Small === $size || SizeEnum::Medium === $size) &&
+            (in_array(CharacterEnum::Optimism, $characters) || in_array(CharacterEnum::Respect, $characters))
+        ) {
+            $prediction->predictDrink(BeerStyleEnum::Saison, ForcePredictionEnum::Strong);
+        }
+
+        // sociable and relaxed spirit
+        if (
+            (HairinessColorEnum::Blonde || HairinessColorEnum::Brown || HairinessColorEnum::Pink || HairinessColorEnum::Rainbow) &&
+            (AgeRangeEnum::Young === $age || AgeRangeEnum::MiddleAged) &&
+            (SizeEnum::Medium === $size || SizeEnum::Tall === $size || SizeEnum::VeryTall === $size) &&
+            (in_array(CharacterEnum::OpenMindedness, $characters) || in_array(CharacterEnum::Charisma, $characters))
+        ) {
+            $prediction->predictDrink(BeerStyleEnum::Weizenbier, ForcePredictionEnum::Strong);
+        }
+
         return $prediction;
     }
 }

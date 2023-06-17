@@ -23,6 +23,7 @@ enum HairinessColorEnum
         return match ($hairinessColor) {
             'black' => self::Black,
             'brown' => self::Brown,
+            'chestnut' => self::Chestnut,
             'blonde' => self::Blonde,
             'ginger' => self::Roux,
             'blue' => self::Blue,
