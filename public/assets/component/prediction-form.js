@@ -13,7 +13,12 @@ class PredictionForm extends CustomElement {
       }
 
       if (data.birthday) {
+        const now = new Date()
         data.birthday = new Date(data.birthday)
+
+        if (now.getFullYear() - data.birthday.getFullYear() < 18) {
+          return alert('Oops tu sembles trop jeune pour boire de la bière ! Reviens après tes 18 ans :)')
+        }
       }
 
       fetch('/api/predict-drink', {
