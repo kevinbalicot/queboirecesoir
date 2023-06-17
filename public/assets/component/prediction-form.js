@@ -70,7 +70,7 @@ class PredictionForm extends CustomElement {
         </div>
 
         <div class="mb-3">
-          <label for="size">Taille (environ hein)</label>
+          <label for="size">Taille en cm (environ hein)</label>
           <input id="size" name="size" class="form-control" type="number" min="100" step="1" placeholder="150">
         </div>
 
