@@ -22,10 +22,9 @@ final readonly class PredictDrinkCommandHandler implements CommandHandlerInterfa
             age: $drinkCommand->age,
             hairinessColor: $drinkCommand->hairinessColor,
             size: $drinkCommand->size,
-            corpulence: $drinkCommand->corpulence,
             characters: $drinkCommand->characters,
             politicalOrientations: $drinkCommand->politicalOrientations,
-            wayOfThinkings: $drinkCommand->wayOfThinkings
+            waysOfThinking: $drinkCommand->waysOfThinking
         );
     }
 }
