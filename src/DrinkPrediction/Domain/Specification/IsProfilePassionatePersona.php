@@ -20,7 +20,7 @@ class IsProfilePassionatePersona
     ) {
     }
 
-    public function isSatisfied(DrinkerProfileInterface $drinkerProfile): bool
+    public function isSatisfiedBy(DrinkerProfileInterface $drinkerProfile): bool
     {
         return
             $this->doesProfileHaveExoticHairiness->isSatisfiedBy($drinkerProfile) &&

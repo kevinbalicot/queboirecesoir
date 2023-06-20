@@ -23,7 +23,7 @@ class IsProfileSociableAndRelaxedSpiritPersona
     ) {
     }
 
-    public function isSatisfied(DrinkerProfileInterface $drinkerProfile): bool
+    public function isSatisfiedBy(DrinkerProfileInterface $drinkerProfile): bool
     {
         return
             $this->doesProfileHaveBlondHairiness->isSatisfiedBy($drinkerProfile) &&

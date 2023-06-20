@@ -23,7 +23,7 @@ class IsProfileEccentricEpicureanPersona
     ) {
     }
 
-    public function isSatisfied(DrinkerProfileInterface $drinkerProfile): bool
+    public function isSatisfiedBy(DrinkerProfileInterface $drinkerProfile): bool
     {
         return
             $this->doesProfileHaveBlackHairiness->isSatisfiedBy($drinkerProfile) &&
