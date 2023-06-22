@@ -39,4 +39,9 @@ class WhenProfilIsContemplativeMusicLoverPersona implements DrinkPredictionRuleI
     {
         $subject->predictDrink(BeerStyleEnum::Stout, ForcePredictionEnum::Strong);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil is contemplative music lover persona';
+    }
 }

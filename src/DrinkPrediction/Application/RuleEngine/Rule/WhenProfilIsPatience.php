@@ -36,4 +36,9 @@ class WhenProfilIsPatience implements DrinkPredictionRuleInterface
     {
         $subject->predictDrink(BeerStyleEnum::Stout, ForcePredictionEnum::Medium);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil is patience';
+    }
 }

@@ -13,4 +13,14 @@ class PredictDrinkRuleEngine extends AbstractRuleEngine implements PredictDrinkR
     {
         return $subject instanceof DrinkPredictionInterface;
     }
+
+    public function getName(): string
+    {
+        return 'app.predict_drink.rule_engine';
+    }
+
+    public function getDescription(): string
+    {
+        return 'Predict drink for drinker profil depends rules';
+    }
 }

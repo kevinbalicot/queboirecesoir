@@ -39,4 +39,9 @@ class WhenProfilIsEccentricEpicureanPersona implements DrinkPredictionRuleInterf
     {
         $subject->predictDrink(BeerStyleEnum::BelgianStrongAle, ForcePredictionEnum::Strong);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil is eccentric epicurean persona';
+    }
 }

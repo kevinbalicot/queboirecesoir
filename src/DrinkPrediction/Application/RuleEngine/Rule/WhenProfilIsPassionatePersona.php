@@ -39,4 +39,9 @@ class WhenProfilIsPassionatePersona implements DrinkPredictionRuleInterface
     {
         $subject->predictDrink(BeerStyleEnum::Saison, ForcePredictionEnum::Strong);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil is passionate persona';
+    }
 }

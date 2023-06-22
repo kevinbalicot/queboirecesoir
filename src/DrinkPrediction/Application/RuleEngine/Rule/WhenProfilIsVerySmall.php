@@ -36,4 +36,9 @@ class WhenProfilIsVerySmall implements DrinkPredictionRuleInterface
         $subject->predictDrink(BeerStyleEnum::Stout, ForcePredictionEnum::Little);
         $subject->predictDrink(BeerStyleEnum::Pilsner, ForcePredictionEnum::Little);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil is very small size';
+    }
 }

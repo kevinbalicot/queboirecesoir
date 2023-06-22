@@ -37,4 +37,9 @@ class WhenProfilIsVeryTall implements DrinkPredictionRuleInterface
         $subject->predictDrink(BeerStyleEnum::IPA, ForcePredictionEnum::Little);
         $subject->predictDrink(BeerStyleEnum::Stout, ForcePredictionEnum::Little);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil is very tall';
+    }
 }

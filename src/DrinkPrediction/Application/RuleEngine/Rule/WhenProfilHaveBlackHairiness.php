@@ -33,4 +33,9 @@ class WhenProfilHaveBlackHairiness implements DrinkPredictionRuleInterface
     {
         $subject->predictDrink(BeerStyleEnum::Stout, ForcePredictionEnum::Little);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil have black hairiness';
+    }
 }

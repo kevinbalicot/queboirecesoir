@@ -38,4 +38,9 @@ class WhenProfilIsExtremAdventurerPersona implements DrinkPredictionRuleInterfac
     {
         $subject->predictDrink(BeerStyleEnum::IPA, ForcePredictionEnum::Strong);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil is extrem adventurer persona';
+    }
 }

@@ -34,4 +34,9 @@ class WhenProfilHaveExoticHairiness implements DrinkPredictionRuleInterface
     {
         $subject->predictDrink(BeerStyleEnum::IPA, ForcePredictionEnum::Medium);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil have exotic hairiness';
+    }
 }

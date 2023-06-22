@@ -39,4 +39,9 @@ class WhenProfilIsSociableAndRelaxedSpiritPersona implements DrinkPredictionRule
     {
         $subject->predictDrink(BeerStyleEnum::Weizenbier, ForcePredictionEnum::Strong);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil is sociable and relaxed spririt persona';
+    }
 }
