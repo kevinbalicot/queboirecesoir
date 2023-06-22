@@ -34,4 +34,9 @@ class WhenProfilHaveGingerHairiness implements DrinkPredictionRuleInterface
         $subject->predictDrink(BeerStyleEnum::IPA, ForcePredictionEnum::Little);
         $subject->predictDrink(BeerStyleEnum::Saison, ForcePredictionEnum::Little);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil have ginger hairiness';
+    }
 }

@@ -7,4 +7,8 @@ namespace App\Shared\Application\Rule;
 interface RuleEngineInterface
 {
     public function supports(mixed $subject): bool;
+
+    public function getName(): string;
+
+    public function getDescription(): string;
 }

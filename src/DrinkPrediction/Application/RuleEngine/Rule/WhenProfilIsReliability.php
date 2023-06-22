@@ -37,4 +37,9 @@ class WhenProfilIsReliability implements DrinkPredictionRuleInterface
     {
         $subject->predictDrink(BeerStyleEnum::Pilsner, ForcePredictionEnum::Medium);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil is reliability';
+    }
 }

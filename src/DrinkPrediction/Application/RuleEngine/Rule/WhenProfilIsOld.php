@@ -36,4 +36,9 @@ class WhenProfilIsOld implements DrinkPredictionRuleInterface
         $subject->predictDrink(BeerStyleEnum::Pilsner, ForcePredictionEnum::Little);
         $subject->predictDrink(BeerStyleEnum::BelgianStrongAle, ForcePredictionEnum::Little);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil is old';
+    }
 }

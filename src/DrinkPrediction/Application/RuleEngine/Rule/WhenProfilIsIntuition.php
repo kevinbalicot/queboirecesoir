@@ -37,4 +37,9 @@ class WhenProfilIsIntuition implements DrinkPredictionRuleInterface
     {
         $subject->predictDrink(BeerStyleEnum::Saison, ForcePredictionEnum::Medium);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil is intuition';
+    }
 }

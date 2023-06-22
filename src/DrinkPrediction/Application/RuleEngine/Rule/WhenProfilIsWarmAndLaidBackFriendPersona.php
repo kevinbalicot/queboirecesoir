@@ -39,4 +39,9 @@ class WhenProfilIsWarmAndLaidBackFriendPersona implements DrinkPredictionRuleInt
     {
         $subject->predictDrink(BeerStyleEnum::Pilsner, ForcePredictionEnum::Strong);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil is warm and laid back friend persona';
+    }
 }

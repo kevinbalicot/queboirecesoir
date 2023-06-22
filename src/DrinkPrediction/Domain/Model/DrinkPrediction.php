@@ -6,8 +6,9 @@ namespace App\DrinkPrediction\Domain\Model;
 
 use App\DrinkPrediction\Domain\Enum\BeerStyleEnum;
 use App\DrinkPrediction\Domain\Enum\ForcePredictionEnum;
+use App\Shared\Application\Rule\Instrumentation\InstrumentableInterface;
 
-class DrinkPrediction implements DrinkPredictionInterface
+class DrinkPrediction implements DrinkPredictionInterface, InstrumentableInterface
 {
     private array $prediction;
 
@@ -53,5 +54,10 @@ class DrinkPrediction implements DrinkPredictionInterface
             },
             []
         );
+    }
+
+    public function getData(): array
+    {
+        return $this->getPrediction();
     }
 }

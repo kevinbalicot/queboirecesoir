@@ -38,4 +38,9 @@ class WhenProfilIsMedium implements DrinkPredictionRuleInterface
         $subject->predictDrink(BeerStyleEnum::Saison, ForcePredictionEnum::Little);
         $subject->predictDrink(BeerStyleEnum::Weizenbier, ForcePredictionEnum::Little);
     }
+
+    public function getDescription(): string
+    {
+        return 'When drinker profil is medium size';
+    }
 }
