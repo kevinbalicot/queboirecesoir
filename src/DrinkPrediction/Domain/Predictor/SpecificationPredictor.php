@@ -48,7 +48,7 @@ use App\DrinkPrediction\Domain\Specification\IsProfileWarmAndLaidBlackFriendPers
 use App\DrinkPrediction\Domain\Specification\IsProfileWisdom;
 use App\DrinkPrediction\Domain\Specification\IsProfileYoung;
 
-class SpecificationPredictor implements PredicatorInterface
+class SpecificationPredictor
 {
     public function __construct(
         private readonly DoesProfileHaveBlondHairiness $doesProfileHaveBlondHairiness,
@@ -249,27 +249,27 @@ class SpecificationPredictor implements PredicatorInterface
             $prediction->predictDrink(BeerStyleEnum::Saison, ForcePredictionEnum::Medium);
         }
 
-        if ($this->isProfileExtremeAdventurerPersona->isSatisfied($profile)) {
+        if ($this->isProfileExtremeAdventurerPersona->isSatisfiedBy($profile)) {
             $prediction->predictDrink(BeerStyleEnum::IPA, ForcePredictionEnum::Strong);
         }
 
-        if ($this->isProfileContemplativeMusicLoverPersona->isSatisfied($profile)) {
+        if ($this->isProfileContemplativeMusicLoverPersona->isSatisfiedBy($profile)) {
             $prediction->predictDrink(BeerStyleEnum::Stout, ForcePredictionEnum::Strong);
         }
 
-        if ($this->isProfileWarmAndLaidBlackFriendPersona->isSatisfied($profile)) {
+        if ($this->isProfileWarmAndLaidBlackFriendPersona->isSatisfiedBy($profile)) {
             $prediction->predictDrink(BeerStyleEnum::Pilsner, ForcePredictionEnum::Strong);
         }
 
-        if ($this->isProfileEccentricEpicureanPersona->isSatisfied($profile)) {
+        if ($this->isProfileEccentricEpicureanPersona->isSatisfiedBy($profile)) {
             $prediction->predictDrink(BeerStyleEnum::BelgianStrongAle, ForcePredictionEnum::Strong);
         }
 
-        if ($this->isProfilePassionatePersona->isSatisfied($profile)) {
+        if ($this->isProfilePassionatePersona->isSatisfiedBy($profile)) {
             $prediction->predictDrink(BeerStyleEnum::Saison, ForcePredictionEnum::Strong);
         }
 
-        if ($this->isProfileSociableAndRelaxedSpiritPersona->isSatisfied($profile)) {
+        if ($this->isProfileSociableAndRelaxedSpiritPersona->isSatisfiedBy($profile)) {
             $prediction->predictDrink(BeerStyleEnum::Weizenbier, ForcePredictionEnum::Strong);
         }
 

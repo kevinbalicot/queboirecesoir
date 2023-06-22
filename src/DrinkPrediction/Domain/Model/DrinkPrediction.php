@@ -11,8 +11,9 @@ class DrinkPrediction implements DrinkPredictionInterface
 {
     private array $prediction;
 
-    public function __construct()
-    {
+    public function __construct(
+        private readonly DrinkerProfileInterface $drinkerProfile
+    ) {
         $this->prediction = array_reduce(BeerStyleEnum::getStyles(), function (array $prediction, BeerStyleEnum $beerStyle): array {
             $prediction[BeerStyleEnum::getName($beerStyle)] = 0;
 
@@ -23,6 +24,11 @@ class DrinkPrediction implements DrinkPredictionInterface
     public function getPrediction(): array
     {
         return $this->normalizePrediction();
+    }
+
+    public function getProfile(): DrinkerProfileInterface
+    {
+        return $this->drinkerProfile;
     }
 
     public function predictDrink(BeerStyleEnum $beerStyle, ForcePredictionEnum $force): void

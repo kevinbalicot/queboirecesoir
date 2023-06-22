@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Shared\Infrastructure\Symfony;
 
+use App\DrinkPrediction\Application\RuleEngine\Rule\DrinkPredictionRuleInterface;
 use App\Shared\Application\Command\CommandHandlerInterface;
 use App\Shared\Application\Query\QueryHandlerInterface;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
@@ -38,5 +39,8 @@ final class Kernel extends BaseKernel
 
         $container->registerForAutoconfiguration(CommandHandlerInterface::class)
             ->addTag('messenger.message_handler', ['bus' => 'command.bus']);
+
+        $container->registerForAutoconfiguration(DrinkPredictionRuleInterface::class)
+            ->addTag('app.rule_engine.drink_prediction');
     }
 }
