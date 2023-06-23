@@ -10,7 +10,7 @@ enum HairinessColorEnum
     case Brown;
     case Chestnut;
     case Blonde;
-    case Roux;
+    case Ginger;
     case Blue;
     case Green;
     case Orange;
@@ -25,7 +25,7 @@ enum HairinessColorEnum
             'brown' => self::Brown,
             'chestnut' => self::Chestnut,
             'blonde' => self::Blonde,
-            'ginger' => self::Roux,
+            'ginger' => self::Ginger,
             'blue' => self::Blue,
             'green' => self::Green,
             'orange' => self::Orange,

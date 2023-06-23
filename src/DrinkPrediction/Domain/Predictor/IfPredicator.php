@@ -7,23 +7,21 @@ namespace App\DrinkPrediction\Domain\Predictor;
 use App\DrinkPrediction\Domain\Enum\AgeRangeEnum;
 use App\DrinkPrediction\Domain\Enum\BeerStyleEnum;
 use App\DrinkPrediction\Domain\Enum\CharacterEnum;
-use App\DrinkPrediction\Domain\Enum\CorpulenceEnum;
 use App\DrinkPrediction\Domain\Enum\ForcePredictionEnum;
 use App\DrinkPrediction\Domain\Enum\HairinessColorEnum;
 use App\DrinkPrediction\Domain\Enum\SizeEnum;
 use App\DrinkPrediction\Domain\Factory\DrinkPredictionFactory;
 use App\DrinkPrediction\Domain\Model\DrinkPredictionInterface;
 
-class IfPredicator implements PredicatorInterface
+class IfPredicator
 {
     public function predictDrink(
         AgeRangeEnum $age,
         HairinessColorEnum $hairinessColor,
         SizeEnum $size,
-        CorpulenceEnum $corpulence,
         array $characters,
         array $politicalOrientations,
-        array $wayOfThinkings
+        array $waysOfThinking
     ): DrinkPredictionInterface
     {
         $prediction = DrinkPredictionFactory::createNew();
@@ -40,7 +38,7 @@ class IfPredicator implements PredicatorInterface
             $prediction->predictDrink(BeerStyleEnum::Weizenbier, ForcePredictionEnum::Little);
         }
 
-        if (HairinessColorEnum::Roux === $hairinessColor) {
+        if (HairinessColorEnum::Ginger === $hairinessColor) {
             $prediction->predictDrink(BeerStyleEnum::IPA, ForcePredictionEnum::Little);
             $prediction->predictDrink(BeerStyleEnum::Saison, ForcePredictionEnum::Little);
         }
@@ -144,10 +142,6 @@ class IfPredicator implements PredicatorInterface
 
         if (in_array(CharacterEnum::Reliability, $characters)) {
             $prediction->predictDrink(BeerStyleEnum::Pilsner, ForcePredictionEnum::Medium);
-        }
-
-        if (in_array(CharacterEnum::Optimism, $characters)) {
-            $prediction->predictDrink(BeerStyleEnum::Saison, ForcePredictionEnum::Medium);
         }
 
         if (in_array(CharacterEnum::Creativity, $characters)) {
