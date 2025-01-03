@@ -2,6 +2,8 @@ ARG PHP_VERSION=8.2
 
 FROM php:${PHP_VERSION}-fpm
 
+EXPOSE 8000
+
 RUN apt-get update -q && \
     apt-get install -qy software-properties-common && \
     export LC_ALL=en_US.UTF-8 && \
